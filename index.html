@@ -11,7 +11,9 @@
     <title>PravTest</title>
 
     <style>
-      
+      body{
+        background-color: #F5F5F9;
+      }
       /* start overide section */
       .accordion-item{
         border: none;
@@ -22,8 +24,12 @@
       .accordion-button:hover {
         background-color: rgba(67,89,113,.04);
       }
+      .card{
+        margin: 10px;
+      }
       /* end overide section */
       .side-bar-vertical{
+        background-color: #fff;
         position: fixed;
         top: 50px;
         left: 0;
@@ -65,15 +71,17 @@
         background-color: black;
       }
       .base-body{
-        position: fixed;
-        top: 0;
-        left: 16.25rem;
+        margin-left: 16.25rem;
         display: flex;
         flex-wrap: wrap;
-        align-content:flex-start;
+        align-content:space-around;
+        align-items: center;
       }
+    
 
       .logo-section{
+        background-color: #fff;
+        width: 16.25rem;
         position: fixed;
         top: 0;
         left: 0;
@@ -133,6 +141,29 @@
       <!-- main body -->
       <div id="content" class="base-body">
         <button type="button" class="btn btn-primary" onclick="makeBody()">make module</button>
+        <div class="card" style="width: 18rem;">
+          <img src="logo.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="logo.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div><div class="card" style="width: 18rem;">
+          <img src="logo.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
       </div>
     </div>
     
@@ -185,7 +216,7 @@
       }
       function makeBody(){
         document.getElementById("accordionExample").innerHTML+= buildSidebarMenuSectionName("section");
-        for (let index = 0; index < 20; index++) {
+        for (let index = 0; index < 5; index++) {
           document.getElementById("accordionExample").innerHTML+=
                     buildSidebarMenuRow(index,
                                         "cobra0011",
