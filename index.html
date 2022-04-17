@@ -9,38 +9,99 @@
     <link href="bootstrap.min.css" rel="stylesheet">
 
     <title>PravTest</title>
+
+    <style>
+      
+      /* start overide section */
+      .accordion-item{
+        border: none;
+        margin: 2px 0px 2px 0px;
+        margin: 10px;
+        border-radius: 0.375rem;
+      }
+      .accordion-button:hover {
+        background-color: rgba(67,89,113,.04);
+      }
+      /* end overide section */
+      .side-bar-vertical{
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        width: 16.25rem;
+      }
+      .side-bar-content{
+        overflow-y: scroll;
+        height: 100vh;
+      }
+      .side-bar-content::-webkit-scrollbar {
+        width: .4em; 
+      }
+      .side-bar-content::-webkit-scrollbar,
+      .side-bar-content::-webkit-scrollbar-thumb {
+        overflow:visible;
+        border-radius: 4px;
+      }
+      .side-bar-content::-webkit-scrollbar-thumb {
+        background: rgba(0,0,0,.2); 
+      }
+      .cover-bar {
+        position: absolute;
+        background: #fff;;
+        height: 100%;  
+        top: 0;
+        right: 0;
+        width: .4em;
+        -webkit-transition: all .5s;
+        opacity: 1;
+      }
+      .side-bar-vertical:hover .cover-bar {
+        opacity: 0;
+        -webkit-transition: all .5s;
+      }
+
+
+      .search-nav-bar{
+        background-color: black;
+      }
+      .base-body{
+        position: fixed;
+        top: 0;
+        left: 16.25rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-content:flex-start;
+      }
+    </style>
   </head>
   <body>
-    <div class="accordion" id="accordionExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Accordion Item #1
-            </button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-            </div>
+    <!-- side bar menu -->
+    <div style="display: flex;">
+      <div id="sideBar" class="side-bar-vertical">
+        <div id="sideBarContent" class="side-bar-content">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  Accordion Item #1
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+              </div>
+            </div>       
           </div>
+          <div class="cover-bar"></div>
         </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Accordion Item #2
-            </button>
-          </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-            </div>
-          </div>
-        </div>
-        
       </div>
-
-    <button type="button" class="btn btn-primary" onclick="testModule()">make module</button>
-
+      <!-- main body -->
+      <div id="content" class="base-body">
+        <button type="button" class="btn btn-primary" onclick="makeBody()">make module</button>
+      </div>
+    </div>
+    
     
     <script src="jquery-3.6.0.js"></script>
     <script src="bootstrap.bundle.min.js"></script>
@@ -75,6 +136,13 @@
 
       function testModule(){
         console.log(buildSidebarMenuRow(240,"cobra0011","0000000","accordionExample"));
+      }
+      function makeBody(){
+        for (let index = 0; index < 20; index++) {
+          document.getElementById("accordionExample").innerHTML+=buildSidebarMenuRow(index,"cobra0011","0000000","accordionExample");
+        }
+        
+
       }
   </script>
 </html>
