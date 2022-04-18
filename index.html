@@ -20,6 +20,15 @@
           <div class="logo-section">
             <img src="logo.png" alt="logo">
             <strong>Prav Comp.</strong>
+
+            <div class="side-bar-toggler">
+              <button class="btn btn-secondary" style="border-radius: 15%" onclick="closeSidebar()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+                </svg>
+              </button>
+            </div>
+            
           </div>
           <div class="accordion" id="accordionExample">
             
@@ -41,9 +50,17 @@
       </div>
       <!-- main body -->
       <div id="content" class="base-body">
-        <div style="min-width: 80vw; background-color: #fff; margin: 1%;height: 60px;
-        border-radius: 0.25rem; display: flex; flex-direction: row; align-items: center;padding-left: 10pt;padding-right: 10pt;justify-content: space-between;">
+        <div class="search-bar">
         <div class="search-icon">
+
+          <div class="side-bar-toggler">
+            <button class="btn btn-outline-secondary" type="button" onclick="showSideBar()">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-justify" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+              </svg>
+            </button>
+          </div>
+
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
           </svg>

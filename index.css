@@ -97,4 +97,32 @@ body{
     background-color: rgba(67,89,113,.04);
     cursor: pointer;
   }
+
+  .search-bar{
+    min-width: 80vw;
+    background-color: #fff;
+    margin: 1%;
+    height: 60px;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 10pt;
+    padding-right: 10pt;
+    justify-content: space-between;
+  }
+  .side-bar-toggler{
+      display: none;
+  }
   
+  @media only screen and (max-width: 1200px) {
+      .base-body{
+        margin-left: 0;
+      }
+      .search-bar{
+        width: 100%;
+      }
+      .side-bar-toggler{
+        display: contents;
+    }
+  }

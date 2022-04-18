@@ -81,6 +81,33 @@ function makeBody(){
                                                                 "https://www.google.com");
       
   }
+ 
   
 
 }
+
+function showSideBar(){
+  $("#sideBar")
+    .css("display", "block")
+    .hide()
+    .fadeIn();
+}
+
+function closeSidebar(){
+  $(".side-bar-vertical")
+    .fadeOut("slow");
+}
+
+
+
+$(window).resize(function() {
+  if($(window).width()>1200){
+    $("#sideBar")
+    .css("display", "block")
+    .hide()
+    .fadeIn();
+  }else{
+    $(".side-bar-vertical")
+    .css("display", "none");
+  };
+});
